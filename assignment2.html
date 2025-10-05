@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Assignment LocalStorage</title>
+</head>
+<body>
+    <div class="flex items-center justify-center flex-col">
+        <h1 class="text-xl font-bold text-center text-white bg-black p-2">Assignment 2 - Digital Clock using Date</h1>
+    </div>
+
+     <div class="flex justify-center mt-15 gap-5">
+
+        <button class="hover:bg-gray-300 border-1 border-black text-lg font-semibold p-2 rounded-lg cursor-pointer"
+        onclick="function Onclick(){
+            location.href = './index.html';
+        }; Onclick()"> <- Go to Assignment 1</button>
+
+        <button class="hover:bg-gray-300 border-1 border-black text-lg font-semibold p-2 rounded-lg cursor-pointer"
+        onclick="function Onclick(){
+            location.href = './assignment3.html';
+        }; Onclick()">Go to Assignment 3 -></button>
+
+       
+    </div>
+
+    <script>
+        let div = document.querySelector('div');
+        let text = document.createElement('h1');
+        let clock = setInterval(() => {
+            let date = new Date();
+            let time = date.toLocaleTimeString('en-Us', {hour12: true});
+            text.textContent = time;
+            console.log(time);
+        },1000);
+
+        text.classList = "text-4xl font-bold mt-5";
+        div.append(text);
+        // console.log(clock);
+
+    </script>
+
+</body>
+</html>

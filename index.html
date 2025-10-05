@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Assignment LocalStorage</title>
+</head>
+<body>
+    <div class="flex items-center justify-center flex-col">
+        <h1 class="text-xl font-bold text-center text-white bg-black p-2">Assignment 1 - Working With Date Methods</h1>
+    </div>
+
+    <div class="flex justify-center mt-15">
+        <button class="hover:bg-gray-300 border-1 border-black text-lg font-semibold p-2 rounded-lg cursor-pointer"
+        onclick="function Onclick(){
+            location.href = './assignment2.html';
+        }; Onclick()">Go to Assignment 2 -></button>
+
+        
+    </div>
+
+    <script>
+        const div = document.querySelector('div');
+        let text = document.createElement('h1');
+        text.classList = 'text-2xl font-bold mt-4  w-80'
+        text.textContent = "Hello World";
+
+        const nayiDate = new Date();
+
+        let Year = nayiDate.getFullYear();
+        let month = nayiDate.getMonth() + 1;
+        let date = 0 + (nayiDate.getDate().toString());
+        let day = nayiDate.toLocaleDateString('en-US', {weekday: 'long'});
+        let time = nayiDate.toLocaleTimeString('en-US', {hour12: true});
+
+        let today = new Date();
+        let endOfYear = new Date(today.getFullYear(), '11', '31');
+        let differInMillisec = endOfYear - today;
+        let daysLeft = Math.ceil(differInMillisec / (1000 * 60 * 60 * 24));
+
+
+
+        text.innerText = `Today's Date: ${Year}-${month}-${date}
+        Day: ${day}
+        Time: ${time}
+        Days Left in this Year: ${daysLeft}`;
+
+        div.append(text);
+        console.log()
+
+    </script>
+
+</body>
+</html>
